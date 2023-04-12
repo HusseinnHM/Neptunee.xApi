@@ -6,7 +6,7 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Authors>HusseinnHM</Authors>
         <LangVersion>default</LangVersion>
-        <PackageVersion>1.0.0</PackageVersion>
+        <PackageVersion>1.0.1</PackageVersion>
         <Description>Single line to test your api</Description>
         <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
         <PackageReadmeFile>README.md</PackageReadmeFile>
