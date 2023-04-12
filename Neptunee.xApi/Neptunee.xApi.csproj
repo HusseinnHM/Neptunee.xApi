@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Authors>HusseinnHM</Authors>
+        <LangVersion>default</LangVersion>
+        <PackageVersion>1.0.0</PackageVersion>
+        <Description>Single line to test your api</Description>
+        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageProjectUrl>https://github.com/HusseinnHM/Neptunee.xApi/blob/master/README.md</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/HusseinnHM/Neptunee.xApi</RepositoryUrl>
+        <PackageTags>dotnet, csharp, web, api, integration test, xunit</PackageTags>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <None Include="..\README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="Bogus" Version="34.0.2" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.10" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+        <PackageReference Include="xunit.abstractions" Version="2.0.3" />
+        <PackageReference Include="xunit.assert" Version="2.4.2" />
+        <PackageReference Include="Xunit.Microsoft.DependencyInjection" Version="7.0.3" />
+    </ItemGroup>
+
+</Project>
