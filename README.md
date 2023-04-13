@@ -10,7 +10,6 @@ Easy way to build integration test using xUnit & WebApplicationFactory
 ```csharp
  _fixture.Api.Rout<SampleControllerTest>(nameof(SampleControllerTest.GetAll))
     .FromQuery(nameof(name),name)
-    .Build()
     .Send()
     .EnsureSuccessStatusCode();
 ``` 
@@ -20,7 +19,6 @@ Easy way to build integration test using xUnit & WebApplicationFactory
 ```csharp
  _fixture.Api.Rout(HttpMethod.Get, "api/something/getbyid")
     .FromRoute(nameof(id),id)
-    .Build()
     .Send()
     .EnsureSuccessStatusCode();
 ```
