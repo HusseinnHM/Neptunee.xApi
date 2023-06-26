@@ -86,11 +86,11 @@ _fixture.Api.Rout<SampleControllerTest>(nameof(SampleControllerTest.Add))
     .FromBody(new AddRequstClass // for Json body request
     {
         Id = Guid.NewGuid(),
-        Email = _fixture.Faker.Person.Email,
+        Email = "test@xapi.com",
     })
     .FromForm(new AddRequstClass // for Multipart Form Data body request
     {
-        Name = _fixture.Faker.Name.FullName(),
+        Name = "Simple Test",
         ImageFile = _fixture.FormFile("AssetsFolder/test.png")
     })    
 ```

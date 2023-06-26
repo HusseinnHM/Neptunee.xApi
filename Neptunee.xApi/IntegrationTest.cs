@@ -1,9 +1,7 @@
-using Bogus;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.StaticFiles;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Net.Http.Headers;
 using Xunit.Abstractions;
 
@@ -12,10 +10,8 @@ namespace Neptunee.xApi;
 public class IntegrationTest<TStartup> : IDisposable where TStartup : class
 {
     public ApiFactory<TStartup> Api { get; protected set; }
-    public Faker Faker { get; init; }
     protected IntegrationTest()
     {
-        Faker = new();
         Api = ApiFactory<TStartup>.Initial();
     }
 

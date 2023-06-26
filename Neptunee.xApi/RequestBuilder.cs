@@ -51,6 +51,18 @@ public partial class XApiRequest
         return this;
     }
 
+    public XApiRequest FromHeader<TValue>(string key, TValue value)
+    {
+        _request.Headers.Add(key, value!.ToString());
+        return this;
+    }
+
+    public XApiRequest FromHeader<TObj>(TObj obj)
+    {
+        SetProps(obj, p => FromHeader(p.Name, p.GetValue(obj)));
+        return this;
+    }
+
     public XApiRequest FromRoute<TValue>(string key, TValue value)
     {
         var start = Url.IndexOf("{" + key, StringComparison.OrdinalIgnoreCase);
@@ -88,7 +100,6 @@ public partial class XApiRequest
     private string RequestUri(Type controllerType, MethodInfo methodInfo)
     {
         var controllerName = controllerType.Name.RemoveControllerSuffix();
-        controllerName.Replace("controller", "", StringComparison.OrdinalIgnoreCase);
         var actionName = ActionName(methodInfo);
         var template = RoutTemplate(controllerType, methodInfo);
         return template.FixControllerName(controllerName).FixActionName(actionName);

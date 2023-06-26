@@ -1,4 +1,5 @@
 using System.Net;
+using Bogus;
 using Neptunee.xApi;
 using Sample.API.Controllers;
 using Sample.API.Requests;
@@ -9,7 +10,7 @@ namespace Sample.Test.Controllers;
 public class SampleControllerTest : IClassFixture<IntegrationTestFixture>
 {
     private readonly IntegrationTestFixture _fixture;
-    
+
     public SampleControllerTest(IntegrationTestFixture fixture, ITestOutputHelper output)
     {
         _fixture = fixture;
@@ -43,10 +44,10 @@ public class SampleControllerTest : IClassFixture<IntegrationTestFixture>
     {
         var request = new UploadRequest
         {
-            Path = Path.Combine("media","images"),
-            File = _fixture.FormFile("dotnet.svg")
+            Path = Path.Combine("media", "images"),
+            File = _fixture.FormFile(Const.SvgImagePath)
         };
-        
+
         await _fixture.Api.Rout<SampleController>(nameof(SampleController.Upload))
             .FromForm(request)
             .SendAsync()

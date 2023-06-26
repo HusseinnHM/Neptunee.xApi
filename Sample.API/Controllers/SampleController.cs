@@ -29,7 +29,7 @@ public class SampleController : ControllerBase
     }
 
     [HttpPost("api/[controller]/[action]/{id:guid}")]
-    public IActionResult Modify([FromRoute] Guid id,[FromBody] ModifyRequest request)
+    public IActionResult Modify([FromRoute] Guid id, [FromBody] ModifyRequest request)
     {
         return Ok(new
         {

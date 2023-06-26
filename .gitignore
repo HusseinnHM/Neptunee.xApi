@@ -8,7 +8,7 @@
 
 # Local History for Visual Studio Code
 .history/
-
+/Sample.API/wwwroot
 # Built Visual Studio Code Extensions
 *.vsix
 /.idea/

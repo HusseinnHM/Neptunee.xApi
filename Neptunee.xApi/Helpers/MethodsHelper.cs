@@ -10,18 +10,6 @@ namespace Neptunee.xApi;
 
 public static class HelperMethods
 {
-    public static T ReadAs<T>(this HttpResponseMessage httpResponseMessage) where T : new()
-        => JsonConvert.DeserializeObject<T>(httpResponseMessage?.Content?.ReadAsStringAsync().GetAwaiter()
-               .GetResult()!) ??
-           throw new NullReferenceException();
-
-    public static T ReadAs<T>(this HttpContent httpContent) where T : new()
-        => JsonConvert.DeserializeObject<T>(httpContent?.ReadAsStringAsync()!.GetAwaiter().GetResult()!) ??
-           throw new NullReferenceException();
-
-    public static string Serialize<T>(this T t)
-        => JsonConvert.SerializeObject(t, Formatting.Indented);
-
     public static string AsString(this MultipartFormDataContent content)
     {
         var fileNames = content.Where(c => c is ByteArrayContent and not StringContent { Headers.ContentDisposition.Name.Length: > 0 })
