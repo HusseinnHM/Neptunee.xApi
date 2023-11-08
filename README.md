@@ -2,6 +2,7 @@
 # xApi - Single line to test your api !
 ![](https://img.shields.io/nuget/dt/Neptunee.xApi)
 [![](https://img.shields.io/nuget/v/Neptunee.xApi)](https://www.nuget.org/packages/Neptunee.xApi)
+![](https://img.shields.io/badge/Unit%20Test-10%20Passed-green)
 
 Easy way to build integration test using xUnit & WebApplicationFactory
 
