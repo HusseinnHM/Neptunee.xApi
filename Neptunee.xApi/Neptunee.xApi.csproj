@@ -6,17 +6,19 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Authors>HusseinnHM</Authors>
         <LangVersion>default</LangVersion>
-        <PackageVersion>1.0.2</PackageVersion>
         <Description>Single line to test your api</Description>
         <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <PackageProjectUrl>https://github.com/HusseinnHM/Neptunee.xApi/blob/master/README.md</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/HusseinnHM/Neptunee.xApi</PackageProjectUrl>
         <RepositoryUrl>https://github.com/HusseinnHM/Neptunee.xApi</RepositoryUrl>
         <PackageTags>dotnet, csharp, web, api, integration test, xunit</PackageTags>
+        <PackageIcon>icon.png</PackageIcon>
+        <PackageVersion>1.0.3</PackageVersion>
     </PropertyGroup>
-    
+
     <ItemGroup>
-        <None Include="..\README.md" Pack="true" PackagePath="\" />
+        <None Include="..\icon.png" Pack="true" PackagePath="\"/>
+        <None Include="..\README.md" Pack="true" PackagePath="\"/>
     </ItemGroup>
     
     <ItemGroup>
