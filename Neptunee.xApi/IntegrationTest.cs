@@ -10,6 +10,7 @@ namespace Neptunee.xApi;
 public class IntegrationTest<TStartup> : IDisposable where TStartup : class
 {
     public ApiFactory<TStartup> Api { get; protected set; }
+
     protected IntegrationTest()
     {
         Api = ApiFactory<TStartup>.Initial();
@@ -29,7 +30,7 @@ public class IntegrationTest<TStartup> : IDisposable where TStartup : class
         => FormFile(new MemoryStream(), fileName, contentType);
 
     public IFormFile FormFile(string path, string? fileName = null, string? contentType = null)
-        => FormFile(new FileStream(path, FileMode.Open), fileName ?? Path.GetFileName(path), contentType);
+        => FormFile(File.ReadAllBytes(path), fileName ?? Path.GetFileName(path), contentType);
 
     public IFormFile FormFile(byte[] bytes, string fileName, string? contentType = null)
         => FormFile(new MemoryStream(bytes), fileName, contentType);
@@ -47,7 +48,7 @@ public class IntegrationTest<TStartup> : IDisposable where TStartup : class
         {
             Headers = new HeaderDictionary
             {
-                new(HeaderNames.ContentType,contentType) 
+                new(HeaderNames.ContentType, contentType)
             }
         };
     }
