@@ -113,7 +113,7 @@ public partial class XApiRequest
 
     private string RoutTemplate(Type controllerType, MethodInfo methodInfo)
     {
-        var controllerRoutAttr = controllerType.GetFirstOrDefaultAttr<RouteAttribute>();
+        var controllerRoutAttr = controllerType.GetFirstOrDefaultAttr<RouteAttribute>(true);
         var methodRoutAttr = methodInfo.GetFirstOrDefaultAttr<RouteAttribute>();
         var httpMethodAttribute = methodInfo.GetFirstOrDefaultAttr<HttpMethodAttribute>();
         return string.Join("/", new[]
